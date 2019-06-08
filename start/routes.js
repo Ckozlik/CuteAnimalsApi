@@ -16,6 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get("/", () => {
-  return { greeting: "Hello world in JSON" };
-});
+// Route.get("/", () => {
+//   return { greeting: "Hello world in JSON" };
+// });
+const Database = use('Database')
+
+// Route.get('/', async () => {
+//   return await Database.table('animals').select('*')
+// })
+Route.get('/', async () => {
+  return await Database.table('animals').where('location','africa')
+})
