@@ -22,40 +22,13 @@ Route.get("/", () => {
 // const Database = use('Database')
 const Animal = use('App/Models/Animal')
 
-Route.get('/animals', async () => {
-  return await Animal.all()
-})
+Route.get('/animals', "AnimalController.index").as('animals.index')
 
-Route.get('/animal/:id', async ({ params }) => {
-  return await Animal.find(params.id)
-})
+Route.get('/animal/:id', 'AnimalController.show').as('animals.show')
 
-Route.delete('/animal/:id', async ({ params }) => {
-  const animal = await Animal.find(params.id)
-  await animal.delete();
-  return await Animal.all()
-})
+Route.delete('/animal/:id', 'AnimalController.destroy').as('animals.destroy')
 
-Route.post('/animals', async ({ request }) => {
-  const animal = new Animal();
-  const body = request.post();
+Route.post('/animals', 'AnimalController.store').as('animals.store')
 
-  animal.name = body.name;
-  animal.fun_fact = body.fun_fact;
-  animal.location = body.location
+Route.put('/animal/:id', 'AnimalController.update').as('animals.update')
 
-  await animal.save()
-  return await Animal.all()
-})
-
-Route.put('/animal/:id', async ({ request, params }) => {
-  const animal = await Animal.find(params.id)
-  const body = request.post();
-
-  animal.name = body.name;
-  animal.fun_fact = body.fun_fact;
-  animal.location = body.location;
-
-  await animal.save()
-  return await Animal.all()
-})
