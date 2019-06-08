@@ -15,20 +15,19 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+Route.resource('animals', 'AnimalController')
 
-Route.get("/", () => {
-  return { greeting: "Hello world in JSON" };
-});
-// const Database = use('Database')
-const Animal = use('App/Models/Animal')
+// Route.get("/", () => {
+//   return { greeting: "Hello world in JSON" };
+// });
 
-Route.get('/animals', "AnimalController.index").as('animals.index')
+// Route.get('/animals', "AnimalController.index").as('animals.index')
 
-Route.get('/animal/:id', 'AnimalController.show').as('animals.show')
+// Route.get('/animals/:id', 'AnimalController.show').as('animals.show')
 
-Route.delete('/animal/:id', 'AnimalController.destroy').as('animals.destroy')
+// Route.delete('/animal/:id', 'AnimalController.destroy').as('animals.destroy')
 
-Route.post('/animals', 'AnimalController.store').as('animals.store')
+// Route.post('/animals', 'AnimalController.store').as('animals.store')
 
-Route.put('/animal/:id', 'AnimalController.update').as('animals.update')
+// Route.put('/animal/:id', 'AnimalController.update').as('animals.update')
 

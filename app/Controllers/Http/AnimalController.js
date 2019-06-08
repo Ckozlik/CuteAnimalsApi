@@ -5,7 +5,6 @@ class AnimalController {
   async index() {
     return await Animal.all();
   }
-
   async show({request, response}){
     const animal = await Animal.find(request.params.id);
     response.send(animal);
