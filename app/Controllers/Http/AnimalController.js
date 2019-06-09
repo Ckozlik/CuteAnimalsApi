@@ -3,7 +3,10 @@ const Animal = use('App/Models/Animal')
 
 class AnimalController {
   async index() {
-    return await Animal.all();
+    return await Animal
+    .query()
+    .with('location')
+    .fetch();
   }
   async show({request, response}){
     const animal = await Animal.find(request.params.id);

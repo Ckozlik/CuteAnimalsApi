@@ -23,18 +23,23 @@ class AnimalSeeder {
         {
           name: "Elephant",
           fun_fact: "They have very long memories",
-          // location: "Africa"
+          location_id: 1
         },
         {
           name: "Giraffe",
           fun_fact: "Giraffes spend 16-20 hours a day feeding",
-          // location: "Africa"
+          location_id: 1
         },
         {
           name: "Panda",
           fun_fact: "They eat a lot of bamboo",
-          // location: "Asia"
+          location_id: 3
         },
+        {
+          name: "Bison",
+          fun_fact: "Lots in Yellowstone",
+          location_id: 2
+        }
       ]
     //using just seeding 
     // const animal = new Animal()

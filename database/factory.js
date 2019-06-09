@@ -24,6 +24,7 @@ Factory.blueprint('App/Models/Animal', async (faker, i, data) => {
   return {
     name: data.name,
     fun_fact: data.fun_fact,
+    location_id: data.location_id
     // location: data.location
   }
 })
