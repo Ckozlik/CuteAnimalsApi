@@ -1,3 +1,44 @@
+
+
+-----------------------------------------
+handleSubmit(e) {
+  e.preventDefault()
+  axios.post("/animals", {
+    name: this.state.name,
+    loc:
+    fun:
+    animals: parseInt(this.state.animal)
+  }) .then(response => {
+    this.setState({
+
+    })
+  })
+}
+
+
+**in the AnimalController.js
+**in the async store add animal.location_id
+
+
+<fieldset>
+  <label name of location:</label>
+  <input
+    type
+-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 terminal stuff
   adonis make:model Animal --migration
 

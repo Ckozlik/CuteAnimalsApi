@@ -24,6 +24,18 @@ class LocationSeeder {
       },
       {
         name: "Asia"
+      },
+      {
+        name: "South America"
+      },
+      {
+        name: "Antartica"
+      },
+      {
+        name: "Europe"
+      },
+      {
+        name: "Australia"
       }
     ]
     const locationList = locations.map(async location => {
