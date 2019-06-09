@@ -29,7 +29,7 @@ class LocationSeeder {
         name: "South America"
       },
       {
-        name: "Antartica"
+        name: "Antarctica"
       },
       {
         name: "Europe"
