@@ -17,9 +17,9 @@
 const Route = use('Route')
 Route.resource('animals', 'AnimalController')
 
-// Route.get("/", () => {
-//   return { greeting: "Hello world in JSON" };
-// });
+Route.get("/", () => {
+  return { greeting: "Hello world in JSON" };
+});
 
 // Route.get('/animals', "AnimalController.index").as('animals.index')
 

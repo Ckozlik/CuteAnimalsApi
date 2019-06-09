@@ -23,17 +23,17 @@ class AnimalSeeder {
         {
           name: "Elephant",
           fun_fact: "They have very long memories",
-          location: "Africa"
+          // location: "Africa"
         },
         {
           name: "Giraffe",
           fun_fact: "Giraffes spend 16-20 hours a day feeding",
-          location: "Africa"
+          // location: "Africa"
         },
         {
           name: "Panda",
           fun_fact: "They eat a lot of bamboo",
-          location: "Asia"
+          // location: "Asia"
         },
       ]
     //using just seeding 

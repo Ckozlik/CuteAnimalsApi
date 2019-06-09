@@ -20,7 +20,7 @@ class AnimalController {
     
       animal.name = body.name;
       animal.fun_fact = body.fun_fact;
-      animal.location = body.location
+      // animal.location = body.location
     
       await animal.save()
       const animalList = await Animal.all();
@@ -32,7 +32,7 @@ class AnimalController {
     
       animal.name = body.name;
       animal.fun_fact = body.fun_fact;
-      animal.location = body.location;
+      // animal.location = body.location;
     
       await animal.save()
       const animalList = await Animal.all();

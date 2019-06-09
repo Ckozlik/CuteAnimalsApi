@@ -14,7 +14,7 @@
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 const Animal = use('App/Models/Animal')
-
+const Location = use('App/Models/Location')
 // Factory.blueprint('App/Models/User', (faker) => {
 //   return {
 //     username: faker.username()
@@ -24,6 +24,11 @@ Factory.blueprint('App/Models/Animal', async (faker, i, data) => {
   return {
     name: data.name,
     fun_fact: data.fun_fact,
-    location: data.location
+    // location: data.location
+  }
+})
+Factory.blueprint('App/Models/Location', async (faker, i, data) => {
+  return {
+    name: data.name
   }
 })

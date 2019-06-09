@@ -1,0 +1,62 @@
+terminal stuff
+  adonis make:model Animal --migration
+
+in Schema
+  table.string("name",255).notNullable();
+  (((adonis migration:run)))
+  (((adonis make:seed cuteAnimal{idk})))
+
+**add const and names for array that you want to add to seeder.js
+
+const savedAnimal (((map over it)))
+await Factory.model("App/Models/Animal").create(animal);
+
+**make another factory blueprint in factory.js
+Factory.blueprint("App/Models/Animal", (faker, i, data) => {
+  return {
+    name: data.name
+  }
+})
+
+adonis seed --files="AnimalSeeder.js"
+
+**look at tables on sequel pro
+**add column in table for foreign key (aka animalId, probably)
+**alter this table by a new migration
+
+adonis make:migration animals
+  select table: animals
+
+**go to new migration files (can't rename)
+  class AnimalSchema extends Schema {
+      up() {
+        this.table("animals", table => {
+          table.integer("animal_id").unsigned().after('**whatevs column**');
+          table
+            .foreign("animal_id")
+            .references("id")
+            .inTable("animals");
+      });
+      down () {
+        this.table("animals", table => {
+          table.dropForeign("animal_id");  (((look at knex docs))) 
+          table.dropColumn("animals_id");
+
+        })
+      }
+
+adonis migration:rollback (((the column will be gone, it is giving the option of deleting and adding columns)))
+
+**update factory.js as needed
+
+**Models will have a relation and will need a connection
+  **Lucid ORM Relationships 
+    **When data is queried, you want everything from it
+    **Eager loading ()
+
+**go to AnimalController.js 
+  animals = await Animal.query()
+  .with("animals")
+  .fetch()
+
+
