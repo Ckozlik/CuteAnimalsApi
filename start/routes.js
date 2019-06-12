@@ -20,7 +20,7 @@ Route.resource('animals', 'AnimalController')
 Route.get("/", () => {
   return { greeting: "Hello world in JSON" };
 });
-Route.get('/locations', "LocationController.index")
+Route.resource('locations', "LocationController")
 // Route.get('/animals', "AnimalController.index").as('animals.index')
 
 // Route.get('/animals/:id', 'AnimalController.show').as('animals.show')

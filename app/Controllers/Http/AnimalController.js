@@ -7,11 +7,11 @@ class AnimalController {
       .query()
       .with('location')
       .fetch();
-  }
+  };
   async show({ request, response }) {
     const animal = await Animal.find(request.params.id);
     response.send(animal);
-  }
+  };
   async destroy({ request, response }) {
     const animal = await Animal.find(request.params.id);
     await animal.delete();
