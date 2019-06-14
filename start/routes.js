@@ -15,12 +15,17 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-Route.resource('animals', 'AnimalController')
+Route.resource('animals', 'AnimalController').middleware(['coolAnimalAuth'])
 
 Route.get("/", () => {
   return { greeting: "Hello world in JSON" };
-});
+}).middleware(['coolAnimalAuth']);
 Route.resource('locations', "LocationController")
+
+Route.post('/login', 'UserController.login')
+
+Route.post('/register', 'UserController.create')
+
 // Route.get('/animals', "AnimalController.index").as('animals.index')
 
 // Route.get('/animals/:id', 'AnimalController.show').as('animals.show')
