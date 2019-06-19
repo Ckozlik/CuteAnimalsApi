@@ -19,7 +19,7 @@ Route.resource('animals', 'AnimalController').middleware(['coolAnimalAuth'])
 
 Route.get("/", () => {
   return { greeting: "Hello world in JSON" };
-}).middleware(['coolAnimalAuth']);
+})
 Route.resource('locations', "LocationController")
 
 Route.post('/login', 'UserController.login')
