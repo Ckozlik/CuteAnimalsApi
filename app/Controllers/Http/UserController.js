@@ -7,10 +7,11 @@ class UserController {
     const token = await auth.attempt(email, password)
     response.send(token)
   }
-  async create({ request, response }) {
+  async create({ request, response, auth }) {
     const { email, password, username } = request.all()
     const newUser = await User.create({ username, email, password });
-    response.send(newUser)
+    const token = await auth.attempt(email, password)
+    response.send([newUser, token])
   }
 }
 

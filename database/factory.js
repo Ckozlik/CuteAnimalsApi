@@ -20,7 +20,7 @@ const Location = use('App/Models/Location')
 //     username: faker.username()
 //   }
 // })
-Factory.blueprint('App/Models/Animal', async (faker, i, data) => {
+Factory.blueprint('App/Models/Animal', async ( data) => {
   return {
     name: data.name,
     fun_fact: data.fun_fact,
@@ -28,7 +28,7 @@ Factory.blueprint('App/Models/Animal', async (faker, i, data) => {
     // location: data.location
   }
 })
-Factory.blueprint('App/Models/Location', async (faker, i, data) => {
+Factory.blueprint('App/Models/Location', async ( data) => {
   return {
     name: data.name
   }
